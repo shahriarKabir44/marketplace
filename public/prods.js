@@ -425,7 +425,7 @@ function createTable(data, method) {
         `;
         datalist.innerHTML += str;
     })
-
+$('#product-modal').modal({ show: true });
 }
 $('#myCart').click(() => {
     var id = $('#status').html()
