@@ -393,12 +393,13 @@ $('#UpdateUser').submit((e) => {
 })
 
 function createTable(data, method) {
+    var datalist = document.getElementById('products-posted');
     if (data.length == 0) {
         datalist.innerHTML = 'Nothing to see here :('
         $('#product-modal').modal({ show: true });
         return;
     }
-    var datalist = document.getElementById('products-posted');
+
     sterilize(datalist);
 
     console.log(data)
