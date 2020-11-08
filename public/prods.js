@@ -393,7 +393,11 @@ $('#UpdateUser').submit((e) => {
 })
 
 function createTable(data, method) {
-    if (data.length == 0) return;
+    if (data.length == 0) {
+        datalist.innerHTML = 'Nothing to see here :('
+        $('#product-modal').modal({ show: true });
+        return;
+    }
     var datalist = document.getElementById('products-posted');
     sterilize(datalist);
 
@@ -420,7 +424,7 @@ function createTable(data, method) {
         `;
         datalist.innerHTML += str;
     })
-    $('#product-modal').modal({ show: true })
+
 }
 $('#myCart').click(() => {
     var id = $('#status').html()
