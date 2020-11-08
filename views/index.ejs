@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <!-- Bootstrap CSS -->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <!--fontawesome-->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+            crossorigin="anonymous"></script>
+    </head>
+</head>
+<div id="status" style="visibility: hidden;"></div>
+<!--login modal-->
+<div class="modal fade" id="login-modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">Log In</h4>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" class="was-validated" method="POST">
+                    <div class="form-group">
+                        <label for="uname_login">Username:</label>
+                        <input type="text" class="form-control" id="uname_login" placeholder="Enter username"
+                            name="uname_login" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd_login">Password:</label>
+                        <input type="password" class="form-control" id="pwd_login" placeholder="Enter password"
+                            name="pwd_login" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--login modal end-->
+
+<!--signup modal-->
+<div class="modal fade" id="signup-modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="label">Sign Up</h4>
+                <p id="descreg">Please fill up all the fields</p>
+            </div>
+            <div class="modal-body">
+                <p id="desc"></p>
+                <form class="was-validated">
+                    <div class="form-group">
+                        <label for="uname">First Name:</label>
+                        <input type="text" class="form-control" id="fname" placeholder="Enter Firstname" name="fname"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="uname">Last Name:</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Enter Lasttname" name="lname"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="uname">Email:</label>
+                        <input type="email" class="form-control" id="mail" placeholder="Enter Email" name="mail"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="uname">Username:</label>
+                        <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="remember" required> I agree on
+                            <a href="/terms">Terms and Conditions</a>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Check this checkbox to continue.</div>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign Up</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--signup modal end-->
+
+<!--update modal-->
+<div class="modal fade" id="update-modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="labelUp">Update Info</h4>
+            </div>
+            <div class="modal-body">
+                <p id="desc"></p>
+                <form class="was-validated" id="UpdateUser">
+                    <div class="form-group">
+                        <label for="fnameUp">First Nameup:</label>
+                        <input type="text" class="form-control" id="fnameUp" placeholder="Enter Firstname"
+                            name="fnameUp" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name:</label>
+                        <input type="text" class="form-control" id="lnameUp" placeholder="Enter Lasttname"
+                            name="lnameUp" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="unameUp">Email:</label>
+                        <input type="email" class="form-control" id="mailUp" placeholder="Enter Email" name="mailUp"
+                            required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneUp">Phone Number:</label>
+                        <input type="text" class="form-control" id="phoneUp" placeholder="Enter phone number"
+                            name="phoneUp" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwdUp" placeholder="Enter password"
+                            name="pswdUp" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-success">Update</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--update modal end-->
+
+<!--prod list modal (myads mycart)-->
+<div class="modal fade" id="product-modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" id="prod-list-title"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <ul class="list-group list-group-flush" id="products-posted">
+                    <!--dynamic contents-->
+
+                    <!--dynamic contents end-->
+                </ul>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--prod list modal end-->
+
+<!--post ad modal-->
+<div class="modal fade" id="postAd-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Post an ad!</h4>
+                <p>Please post 4 photos of your product and make sure they are clear enough :)</p>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+                <form class="was-validated" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="uname">Image1</label>
+                        <input type="file" class="form-control" id="file1" name="file1" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="uname">Image2</label>
+                        <input type="file" class="form-control" id="file2" name="file2" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="uname">Image3</label>
+                        <input type="file" class="form-control" id="file3" name="file3" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="uname">Image4</label>
+                        <input type="file" class="form-control" id="file4" name="file4" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="AskedPricePostAd">Desired Price:</label>
+                        <input type="text" class="form-control" id="AskedPricePostAd" placeholder="Desired Price"
+                            name="AskedPricePostAd" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <label for="DescrPostAd">A short description about yor ad:</label>
+                        <input type="text" class="form-control" id="DescrPostAd"
+                            placeholder="A short description about yor ad" name="DescrPostAd" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sel1">Select Category (select one):</label>
+                        <select class="form-control" id="sel1">
+                            <option>Select Category (select one):</option>
+                            <option>Table</option>
+                            <option>Bed</option>
+                            <option>Chair</option>
+                            <option>Quilt</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--post ad modal end-->
+
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top justify-content-between">
+    <a href="/" class="navbar-brand " style="float: left;">
+        <img src="../cf.png" alt="" style="height: 40px;">
+    </a>
+    <button class="navbar-toggler ml-auto" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="my-nav" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav flex-grow-0 ml-auto mr-1 float-rigt">
+            <li class="nav-item active">
+                <button class="btn btn-light" id="noUser1" data-toggle="modal" data-target="#login-modal">Log
+                    in</button>
+            </li>
+            <li class="nav-item active">
+                <button class="btn btn-light" id="noUser2" data-toggle="modal" data-target="#signup-modal">Sign
+                    Up</button>
+            </li>
+            <li class="nav-item active">
+                <button class="btn btn-light" id="dashboard1" data-toggle="modal" data-target="#postAd-modal">Post
+                    an
+                    Ad</button>
+            </li>
+            <li class="nav-item active">
+                <button class="btn btn-light" id="dashboard2" data-toggle="modal" data-target="#update-modal">Update
+                    info</button>
+            </li>
+            <li class="nav-item active">
+                <button class="btn btn-light" id="myAds">My Ads</button>
+            </li>
+            <li class="nav-item active">
+                <button class="btn btn-light" id="myCart">My cart</button>
+            </li>
+            <li class="nav-item active">
+                <button class="btn btn-light" id="notifications">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </li>
+            <li class="nav-item active">
+                <button class="btn btn-danger" id="logOut">Log Out</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br><br><br>
+<!--navbar end-->
+
+
+<script src="../index.js"></script>
+
+</html>

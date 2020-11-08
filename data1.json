@@ -1,0 +1,121 @@
+{
+    "user": [
+        {
+            "ID": "1",
+            "fname": "a",
+            "lname": "b",
+            "uname": "c",
+            "email": "c@c",
+            "phone": "12",
+            "pwd": "d"
+        },
+        {
+            "ID": "2",
+            "fname": "a1",
+            "lname": "b1",
+            "uname": "c1",
+            "email": "c1@c",
+            "phone": "121",
+            "pwd": "d1"
+        }
+    ],
+    "product": [
+        {
+            "productID": "1",
+            "img1": "a.jpg",
+            "img2": "a.jpg",
+            "img3": "a.jpg",
+            "img4": "a.jpg",
+            "askedPrc": "334",
+            "postedBy": "1",
+            "date": "222",
+            "type": "absdasc",
+            "details": "abc"
+        },
+        {
+            "productID": "2",
+            "img1": "b.jpg",
+            "img2": "b.jpg",
+            "img3": "b.jpg",
+            "img4": "b.jpg",
+            "askedPrc": "2222",
+            "postedBy": "1",
+            "date": "222",
+            "type": "abc",
+            "details": "abc"
+        },
+        {
+            "productID": "3",
+            "img1": "c.jpg",
+            "img2": "d.jpg",
+            "img3": "a.jpg",
+            "img4": "b.jpg",
+            "askedPrc": "423",
+            "postedBy": "2",
+            "date": "deewefewfew",
+            "type": "abc",
+            "details": "abc"
+        }
+    ],
+    "cart": [
+        {
+            "orderID": "1",
+            "ownerID": "1",
+            "prID": "1",
+            "cusID": "2",
+            "bargain": "2321",
+            "status": "0",
+            "time": "2020-10-13 02:18"
+        },
+        {
+            "orderID": "2",
+            "ownerID": "1",
+            "prID": "2",
+            "cusID": "2",
+            "bargain": "455",
+            "status": "0",
+            "time": "2020-10-13 02:18"
+        },
+        {
+            "orderID": "3",
+            "ownerID": "2",
+            "prID": "3",
+            "cusID": "1",
+            "bargain": "331",
+            "status": "0",
+            "time": "2020-10-13 02:18"
+        }
+    ],
+    "notification": [
+        {
+            "notID": "1",
+            "from": "2",
+            "to": "1",
+            "type": "1",
+            "seen": "0",
+            "prod": "1",
+            "barg": "2321",
+            "time": "2020-10-13 02:18"
+        },
+        {
+            "notID": "2",
+            "from": "2",
+            "to": "1",
+            "type": "1",
+            "seen": "0",
+            "prod": "2",
+            "barg": "455",
+            "time": "2020-10-13 02:18"
+        },
+        {
+            "notID": "3",
+            "from": "1",
+            "to": "2",
+            "type": "1",
+            "seen": "0",
+            "prod": "3",
+            "barg": "331",
+            "time": "2020-10-13 02:18"
+        }
+    ]
+}
