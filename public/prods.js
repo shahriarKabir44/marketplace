@@ -439,7 +439,7 @@ function showAd() {
     $('#prod-list-title').html('My Ads');
     $.ajax({
 
-        url: `/advt/${id}`,
+        url: `/posts/${id}`,
         contentType: 'application/json',
         success: function (response) {
             console.log(response.data)
@@ -711,7 +711,7 @@ $('#postAds').submit((e) => {
     e.preventDefault();
     var files = ['file1', 'file2', 'file3', 'file4'];
     $.ajax({
-        url: '/adz/' + getel('status').innerHTML,
+        url: '/posts/' + getel('status').innerHTML,
         contentType: 'application/json',
         success: (res) => {
             db = {}
