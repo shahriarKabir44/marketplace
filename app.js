@@ -210,7 +210,7 @@ app.post('/postAd', (req, res) => {
         ad.save((err) => {
             if (err) throw err;
             else {
-                regists.findByIdAndUpdate('idn', { $inc: { products: 1 } }, (errors, dt) => {
+                regists.findByIdAndUpdate('idn', { products: pd + 1 }, (errors, dt) => {
                     if (errors) throw errors;
                     else res.send({ data: '1' })
                 })
