@@ -393,8 +393,10 @@ $('#UpdateUser').submit((e) => {
 })
 
 function createTable(data, method) {
+    if (data.length == 0) return;
     var datalist = document.getElementById('products-posted');
     sterilize(datalist);
+
     console.log(data)
     data.forEach(function (rows) {
         var str = `
