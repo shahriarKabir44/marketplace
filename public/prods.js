@@ -442,6 +442,7 @@ function showAd() {
         url: `/adz/${id}`,
         contentType: 'application/json',
         success: function (response) {
+            console.log(response.data)
             createTable(response.data, 'showProduct')
         }
     })
