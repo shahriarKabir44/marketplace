@@ -112,7 +112,7 @@ app.get('/userStat', (req, res) => {
 app.get('/', (req, res) => {
     res.send({ data: 'fak' })
 })
-app.get('/advt/:id', (req, res) => {
+app.get('/posts/:id', (req, res) => {
     products.find({ postedBy: req.params.id * 1 }).sort({ productID: 1 }).exec((err, dt) => {
         if (err) throw err;
         else {
