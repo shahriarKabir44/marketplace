@@ -439,7 +439,7 @@ function showAd() {
     $('#prod-list-title').html('My Ads');
     $.ajax({
 
-        url: `/adz/${id}`,
+        url: `/advt/${id}`,
         contentType: 'application/json',
         success: function (response) {
             console.log(response.data)
