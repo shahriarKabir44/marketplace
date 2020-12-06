@@ -56,7 +56,7 @@ app.get('/find/:cid/:pid', (req, res) => {
         }
     })
 })
-
+app.get('/',(req,res)=>{res.send({data:'hello'})})
 app.post('/addtocart', (req, res) => {
     var own = req.body.to * 1;
     var pd = req.body.pd * 1;
